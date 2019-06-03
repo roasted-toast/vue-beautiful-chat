@@ -36,7 +36,7 @@
   </div>
   <div v-else>
     <div>
-      <p>You must be logged in to use the Chat!</p>
+      <p>Sorry, the chatbox is disabled for now!</p>
     </div>
   </div>
 </template>
