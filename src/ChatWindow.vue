@@ -25,6 +25,7 @@
     <UserInput
       v-if="!showUserList"
       :showEmoji="showEmoji"
+      :isEnabled="isEnabled"
       :onSubmit="onUserInputSubmit"
       :suggestions="getSuggestions()"
       :showFile="showFile"
@@ -107,6 +108,10 @@ export default {
     disableUserListToggle: {
       type: Boolean,
       default: false
+    },
+    isEnabled: {
+      type: Boolean,
+      default: true
     }
   },
   data() {

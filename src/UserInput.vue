@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="isEnabled">
     <Suggestions :suggestions="suggestions" v-on:sendSuggestion="_submitSuggestion" :colors="colors"/>
     <div v-if="file" class='file-container' :style="{backgroundColor: colors.userInput.text, color: colors.userInput.bg}">
       <span class='icon-file-message'><img :src="icons.file.img"  :alt="icons.file.name" height="15" /></span>
@@ -33,6 +33,11 @@
         </div>
       </div>
     </form>
+  </div>
+  <div v-else>
+    <div>
+      <p>You must be logged in to use the Chat!</p>
+    </div>
   </div>
 </template>
 
@@ -92,6 +97,10 @@ export default {
     colors: {
       type: Object,
       required: true
+    },
+    isEnabled: {
+      type: Boolean,
+      default: () => true
     }
   },
   data () {

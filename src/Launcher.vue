@@ -14,6 +14,7 @@
       :title="chatWindowTitle"
       :titleImageUrl="titleImageUrl"
       :isOpen="isOpen"
+      :isEnabled="isEnabled"
       :onClose="close"
       :showEmoji="showEmoji"
       :showFile="showFile"
@@ -55,6 +56,10 @@ export default {
     showEmoji: {
       type: Boolean,
       default: false
+    },
+    isEnabled: {
+      type: Boolean,
+      default: true
     },
     isOpen: {
       type: Boolean,
